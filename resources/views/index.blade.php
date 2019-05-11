@@ -147,7 +147,7 @@
                                         </div>
                                     </div>
                                 </a>
-                                <div class="col-md-4 col-md-offset-4">
+                                <div class="col-md-8 col-md-offset-2">
                                     <div class="desc">
                                         {!!  $project->desc !!}
                                     </div>
