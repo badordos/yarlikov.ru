@@ -69,4 +69,16 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
         ]);
     }
+
+    //если админ уже есть не даем никому регистрационной формы
+    public function showRegistrationForm()
+    {
+        $admin = User::where('is_admin', 1)->first();
+        if(isset($admin)){
+            return redirect('login');
+        }
+        else{
+            return view('auth.register');
+        }
+    }
 }
