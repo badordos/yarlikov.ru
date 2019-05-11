@@ -30,6 +30,10 @@
                 <label>Заменить изображение</label>
                 <input type="file" class="form-control-file" name="image">
             </div>
+            <div class="form-check">
+                <input type="checkbox" class="form-check-input" name="is_favorite" @if($project->is_favorite == 1) checked @endif >
+                <label class="form-check-label">Избранный</label>
+            </div>
             <button class="btn btn-success" type="submit">Обновить</button>
         </form>
 

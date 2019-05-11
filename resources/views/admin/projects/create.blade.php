@@ -26,6 +26,10 @@
                 <label>Изображение</label>
                 <input type="file" class="form-control-file" name="image">
             </div>
+            <div class="form-check">
+                <input type="checkbox" class="form-check-input" name="is_favorite">
+                <label class="form-check-label">Избранный</label>
+            </div>
             <button class="btn btn-success" type="submit">Сохранить</button>
         </form>
 

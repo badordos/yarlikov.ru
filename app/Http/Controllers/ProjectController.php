@@ -48,6 +48,10 @@ class ProjectController extends Controller
         $project->title = $request->title;
         $project->desc = $request->desc;
         $project->link = $request->link;
+        if(isset($request->is_favorite)){
+            $project->is_favorite = 1;
+        }
+
         $project->save();
 
         $project->addMediaFromRequest('image')->usingFileName(str_slug($request->image->getClientOriginalName()))->preservingOriginal()->toMediaCollection('images');
@@ -99,6 +103,11 @@ class ProjectController extends Controller
         $project->title = $request->title;
         $project->desc = $request->desc;
         $project->link = $request->link;
+        if(isset($request->is_favorite)){
+            $project->is_favorite = 1;
+        }else{
+            $project->is_favorite = 0;
+        }
         $project->update();
 
         if (isset($request->image)) {
