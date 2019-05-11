@@ -3,22 +3,10 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Noah Template</title>
+    <title>{{$title = isset($title) ? $title : env('APP_NAME')}}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content=""/>
-    <meta name="keywords" content=""/>
-    <meta name="author" content=""/>
 
-    <!-- Facebook and Twitter integration -->
-    <meta property="og:title" content=""/>
-    <meta property="og:image" content=""/>
-    <meta property="og:url" content=""/>
-    <meta property="og:site_name" content=""/>
-    <meta property="og:description" content=""/>
-    <meta name="twitter:title" content=""/>
-    <meta name="twitter:image" content=""/>
-    <meta name="twitter:url" content=""/>
-    <meta name="twitter:card" content=""/>
+    <meta name="author" content="Vladislav Yarlikov"/>
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
@@ -74,6 +62,9 @@
                         <li><a href="{{route('albums')}}">Фотопроекты</a></li>
                         <li><a href="{{route('blog')}}">Блог</a></li>
                         <li><a href="{{route('contact')}}">Контакты</a></li>
+                        @if(auth()->check() && auth()->user()->is_admin == true)
+                            <li><a href="{{route('admin.index')}}">Админ панель</a></li>
+                        @endif
                     </ul>
                 </div>
             </div>

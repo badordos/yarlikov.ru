@@ -21,43 +21,51 @@ class HomeController extends Controller
         $albums = Album::orderByDesc('date')->take(6)->get();
         $articles = Article::orderByDesc('created_at')->take(5)->get();
         $projects = Project::orderByDesc('created_at')->take(3)->get();
+        $title = 'Владислав Ярлыков, web-разработчик и фотограф Екатеринбург.';
 
-        return view('index', compact('projects', 'albums', 'articles', 'projects'));
+        return view('index', compact('projects', 'albums', 'articles', 'projects', 'title'));
     }
 
     public function projects()
     {
         $projects = Project::orderByDesc('created_at')->paginate(8);
-        return view('projects', compact('projects'));
+        $title = 'Проекты';
+
+        return view('projects', compact('projects', 'title'));
     }
 
     public function albums()
     {
         $albums = Album::orderByDesc('date')->take(6)->paginate(8);
-        return view('albums', compact('albums'));
+        $title = 'Фотосессии';
+        return view('albums', compact('albums','title'));
     }
 
     public function album(Album $album)
     {
         $media = $album->getMedia('images');
-        return view('album', compact('album', 'media'));
+        $title = $album->title;
+        return view('album', compact('album', 'media', 'title'));
     }
 
     public function blog()
     {
         $articles = Article::orderByDesc('created_at')->paginate(10);
-        return view('blog', compact('articles'));
+        $title = 'Блог о программировании';
+        return view('blog', compact('articles', 'title'));
     }
 
     public function article(Article $article)
     {
-        return view('article', compact('article'));
+        $title = $article->title;
+        return view('article', compact('article', 'title'));
     }
 
 
     public function contact()
     {
-        return view('contact');
+        $title = 'Контакты';
+        return view('contact', compact('title'));
     }
 
 }
