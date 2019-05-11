@@ -43,6 +43,7 @@ class EmailController extends Controller
             'name' => 'required | string',
             'email' => 'required | email',
             'message' => 'required | string',
+            'g-recaptcha-response' => ['required' , 'captcha']
         ]);
 
         $old_subscriber = Subscriber::where('email', $request->email)->first();
