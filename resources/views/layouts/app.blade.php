@@ -57,11 +57,11 @@
             <div class="row">
                 <div class="col-md-12">
                     <ul>
-                        <li class="active"><a href="{{route('home')}}">Главная</a></li>
-                        <li><a href="{{route('projects')}}">Web-сайты</a></li>
-                        <li><a href="{{route('albums')}}">Фотопроекты</a></li>
-                        <li><a href="{{route('blog')}}">Блог</a></li>
-                        <li><a href="{{route('contact')}}">Контакты</a></li>
+                        <li @if(\Request::is('/')) class="active" @endif><a href="{{route('home')}}">Главная</a></li>
+                        <li @if(\Request::is('projects')) class="active" @endif><a href="{{route('projects')}}">Web-сайты</a></li>
+                        <li @if(\Request::is('albums')) class="active" @endif><a href="{{route('albums')}}">Фотопроекты</a></li>
+                        <li @if(\Request::is('blog')) class="active" @endif><a href="{{route('blog')}}">Блог</a></li>
+                        <li @if(\Request::is('contact')) class="active" @endif><a href="{{route('contact')}}">Контакты</a></li>
                         @if(auth()->check() && auth()->user()->is_admin == true)
                             <li><a href="{{route('admin.index')}}">Админ панель</a></li>
                         @endif
