@@ -39,6 +39,8 @@ class AlbumController extends Controller
      */
     public function store(Request $request)
     {
+        ini_set('memory_limit','256M');
+
         $request->validate([
             'title' => 'required | string',
             'desc' => 'required | string',
