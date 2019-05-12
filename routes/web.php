@@ -21,6 +21,6 @@ Route::post('/subscribe', 'EmailController@subscribe')->name('subscribe');
 Route::get('/unsubscribe', 'EmailController@unsubscribe')->name('unsubscribe');
 Route::post('/callback', 'EmailController@callback')->name('callback');
 
-Route::get('phpinfo', function () {
+Route::get('/phpinfo', function () {
     phpinfo();
-})->middleware('admin');
+})->name('phpinfo')->middleware('admin');
