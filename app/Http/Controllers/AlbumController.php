@@ -44,7 +44,7 @@ class AlbumController extends Controller
             'desc' => 'required | string',
             'date' => 'required | string',
             'image' => 'mimes:jpeg, | max:10000 | required',
-            'files.*' => 'image | mimes:jpeg,| max:10000',
+            'files.*' => 'image | mimes:jpeg,jpg,| max:10000',
         ]);
 
         $album = new Album();
