@@ -131,6 +131,10 @@
                 <i class="fas fa-fw fa-newspaper"></i>
                 <span>Articles</span></a>
         </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{{route('phpinfo')}}">
+                <span>PHP info</span></a>
+        </li>
     </ul>
 
     <div id="content-wrapper">
