@@ -44,7 +44,8 @@
                                     href="{{route('projects')}}">web-сайтов</a>:
                                 корпоративных порталов, CRM/ERP-систем, интернет-магазинов.
                             </p>
-                            <p>Еще я люблю заниматься <a href="{{route('albums')}}">фотографией</a>: делаю ради интереса и на заказ
+                            <p>Еще я люблю заниматься <a href="{{route('albums')}}">фотографией</a>: делаю ради интереса
+                                и на заказ
                                 фотосессии и ретушь.
                             </p>
                             <p>И пишу небольшой <a href="{{route('blog')}}">блог</a> о программировании и разработке.
@@ -232,25 +233,39 @@
                         </div>
                     </div>
                 </div>
-                <div class="row animate-box">
-                    <div class="owl-carousel">
-                        @foreach($articles as $article)
-                            <div class="item">
-                                <div class="col-md-12 text-center">
-                                    <div class="testimony">
-                                        <blockquote>
-                                            <h2>
-                                                <a href="{{route('article.frontend.show', $article)}}">{{$article->title}}</a>
-                                                <hr>
-                                                <p>{{$article->short_desc}}</p>
-                                            </h2>
-                                        </blockquote>
+                @if($articles->count() != 1)
+                    <div class="row animate-box">
+                        <div class="owl-carousel">
+                            @foreach($articles as $article)
+                                <div class="item">
+                                    <div class="col-md-12 text-center">
+                                        <div class="testimony">
+                                            <blockquote>
+                                                <h2>
+                                                    <a href="{{route('article.frontend.show', $article)}}">{{$article->title}}</a>
+                                                    <hr>
+                                                    <p>{{$article->short_desc}}</p>
+                                                </h2>
+                                            </blockquote>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        @endforeach
+                            @endforeach
+                        </div>
                     </div>
-                </div>
+                @else
+                    <div class="col-md-12 text-center">
+                        <div class="testimony">
+                            <blockquote>
+                                <h2>
+                                    <a href="{{route('article.frontend.show', $articles->first())}}">{{$articles->first()->title}}</a>
+                                    <hr>
+                                    <p>{{$articles->first()->short_desc}}</p>
+                                </h2>
+                            </blockquote>
+                        </div>
+                    </div>
+                @endif
             </div>
             <br>
             <h3 class="text-center"><a href="{{route('blog')}}">Посмотреть все записи</a></h3>
