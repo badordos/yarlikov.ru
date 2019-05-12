@@ -56,6 +56,7 @@
                                 <a href="http://t.me/v_ordoss"><i class="fab fa-telegram"></i></a>
                                 <a href="https://api.whatsapp.com/send?phone=79326161120"><i
                                         class="fab fa-whatsapp"></i></a>
+                                <a href="https://www.instagram.com/v_ordoss/"><i class="fab fa-instagram"></i></a>
                             </p>
                             <p><a href="tel:+79326161120" class="btn btn-primary btn-outline">Позвонить мне</a></p>
                         </div>
