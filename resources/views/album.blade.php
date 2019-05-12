@@ -33,6 +33,7 @@
                 @endforeach
             </div>
 
+            <p class="text-center">Больше фотографий в моем <a  href="https://www.instagram.com/v_ordoss/"><i class="fab fa-instagram"></i>Instagram</a></p>
 
         </div>
     </div>

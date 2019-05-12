@@ -172,6 +172,7 @@
                     <div class="col-md-12 col-md-offset-0 text-center animate-box intro-heading">
                         <span>Портфолио</span>
                         <h2>Последние фотосессии</h2>
+                        <h3 class="text-center"><a href="{{route('albums')}}">Посмотреть все фотопроекты</a></h3>
                     </div>
                 </div>
                 <div class="row">
@@ -209,7 +210,6 @@
                     </div>
                 </div>
             </div>
-            <h3 class="text-center"><a href="{{route('albums')}}">Посмотреть все фотопроекты</a></h3>
         </div>
     @endif
 
