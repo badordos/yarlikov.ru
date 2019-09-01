@@ -12,7 +12,7 @@ class CommentController extends Controller
         $request->validate([
             'model' => 'required',
             'id' => 'required',
-            'text' => 'required',
+            'comment' => 'required',
             'g-recaptcha-response' => ['required' , 'captcha']
         ]);
 
