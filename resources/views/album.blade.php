@@ -33,6 +33,10 @@
                 @endforeach
             </div>
 
+            @include('components.comments', ['comments' => $album->comments])
+
+            @include('components.comment', ['model' => $album])
+
             <p class="text-center">Больше фотографий в моем <a  href="https://www.instagram.com/v_ordoss/"><i class="fab fa-instagram"></i>Instagram</a></p>
 
         </div>

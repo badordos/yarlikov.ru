@@ -12,6 +12,8 @@ class Article extends Model implements HasMedia
     use HasMediaTrait;
     use Sluggable;
 
+    public $with = ['comments'];
+
     public function getRouteKeyName()
     {
         return 'slug';
@@ -29,5 +31,10 @@ class Article extends Model implements HasMedia
                 'source' => 'title'
             ]
         ];
+    }
+
+    public function comments()
+    {
+        return $this->morphMany('App\Comment', 'model');
     }
 }

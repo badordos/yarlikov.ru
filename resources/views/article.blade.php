@@ -24,6 +24,10 @@
                 {!!  $article->content !!}
             </div>
 
+            @include('components.comments', ['comments' => $article->comments])
+
+            @include('components.comment', ['model' => $article])
+
         </div>
     </div>
 @endsection
